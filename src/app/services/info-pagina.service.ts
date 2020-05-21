@@ -11,13 +11,9 @@ export class InfoPaginaService {
   info: InfoPagina ={};
   cargada = false;
 
-  equipo: any [] = [];
-
   constructor(private http: HttpClient) {
 
     this.cargarInfo();
-    this.cargarEquipo();
-
 
   }
         private cargarInfo() {
@@ -33,15 +29,4 @@ export class InfoPaginaService {
 
         }
 
-        private cargarEquipo() {
-
-          // Leer archivo json
-          this.http.get('https://angular-html-5131d.firebaseio.com/equipo.json')
-          .subscribe( (resp: InfoEquipo) => {
-
-            this.equipo = resp;
-            
-          });
-
-   }
-}
+  } 
